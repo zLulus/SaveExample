@@ -1,0 +1,30 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.24720.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MD5Test", "MD5Test\MD5Test.csproj", "{6C7942EA-4FF8-4B2F-A6DA-EECA9D8AA515}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApplication1", "ConsoleApplication1\ConsoleApplication1.csproj", "{96D6A696-E89D-4685-92A9-6038B6938751}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6C7942EA-4FF8-4B2F-A6DA-EECA9D8AA515}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6C7942EA-4FF8-4B2F-A6DA-EECA9D8AA515}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6C7942EA-4FF8-4B2F-A6DA-EECA9D8AA515}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{6C7942EA-4FF8-4B2F-A6DA-EECA9D8AA515}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6C7942EA-4FF8-4B2F-A6DA-EECA9D8AA515}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6C7942EA-4FF8-4B2F-A6DA-EECA9D8AA515}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{96D6A696-E89D-4685-92A9-6038B6938751}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{96D6A696-E89D-4685-92A9-6038B6938751}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{96D6A696-E89D-4685-92A9-6038B6938751}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{96D6A696-E89D-4685-92A9-6038B6938751}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

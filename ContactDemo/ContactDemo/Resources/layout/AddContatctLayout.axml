@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+    <TextView
+        android:id="@+id/nameTextView"
+        android:layout_height="wrap_content"
+        android:layout_width="fill_parent"
+        android:textSize="20dip"
+        android:text="姓名：" />
+    <EditText
+        android:id="@+id/nameEditText"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="" />
+    <TextView
+        android:id="@+id/phoneNumTextView"
+        android:layout_height="wrap_content"
+        android:layout_width="fill_parent"
+        android:textSize="20dip"
+        android:text="电话号码：" />
+    <EditText
+        android:id="@+id/phoneNumberEditText"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="" />
+    <Button
+        android:id="@+id/AddButton"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="Add" />
+</LinearLayout>
