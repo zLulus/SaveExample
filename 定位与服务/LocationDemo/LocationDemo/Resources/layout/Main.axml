@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    >
+	<Button  
+    android:id="@+id/stop"
+    android:layout_width="fill_parent" 
+    android:layout_height="wrap_content" 
+    android:text="Stop Service"
+    />
+	<Button  
+    android:id="@+id/Goto"
+    android:layout_width="fill_parent" 
+    android:layout_height="wrap_content" 
+    android:text="Goto Another Activity"
+    />
+	<TextView  
+    android:id="@+id/lat"
+    android:layout_width="fill_parent" 
+    android:layout_height="wrap_content" 
+    android:text="Latitude:"
+    />
+	<TextView  
+    android:id="@+id/longx"
+    android:layout_width="fill_parent" 
+    android:layout_height="wrap_content" 
+    android:text="Longitude:"
+    />
+</LinearLayout>

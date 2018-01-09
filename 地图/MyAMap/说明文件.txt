@@ -1,0 +1,4 @@
+由Android平台启动(初始化Xamarin.Forms相关库)——>Xamarin.Forms的App.MainPage主界面（MainPage系NavigationPage类型页面）
+——>MapPage(Xamarin.Forms下的代理页面)——>借助CustomMapRenderer告知应用程序：MapPage由CustomMapRenderer下的Android界面组件及逻辑渲染响应。
+
+MapPage页面的布局设计，在CustomMapRenderer下完成。

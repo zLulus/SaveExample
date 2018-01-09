@@ -1,0 +1,1035 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="TravelMobileModel.Store" Provider="MySql.Data.MySqlClient" ProviderManifestToken="5.6" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="AdminInfos">
+          <Key>
+            <PropertyRef Name="account" />
+          </Key>
+          <Property Name="account" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="name" Type="varchar" MaxLength="20" />
+          <Property Name="password" Type="varchar" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="Comments">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="eventId" Type="varchar" MaxLength="50" />
+          <Property Name="friendPhoneNum" Type="varchar" MaxLength="20" />
+          <Property Name="content" Type="varchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="EmergencyCalls">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="phoneNum" Type="varchar" MaxLength="20" />
+          <Property Name="time" Type="datetime" Precision="0" />
+          <Property Name="x" Type="int" />
+          <Property Name="y" Type="int" />
+        </EntityType>
+        <EntityType Name="Events">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="journalId" Type="varchar" MaxLength="50" />
+          <Property Name="x" Type="int" />
+          <Property Name="y" Type="int" />
+          <Property Name="text" Type="varchar" MaxLength="300" />
+          <Property Name="photo" Type="varchar" MaxLength="100" />
+          <Property Name="time" Type="datetime" Precision="0" />
+        </EntityType>
+        <EntityType Name="FriendReferences">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="userPhoneNum" Type="varchar" MaxLength="20" />
+          <Property Name="friendPhoneNum" Type="varchar" MaxLength="20" />
+          <Property Name="privilege" Type="int" />
+        </EntityType>
+        <EntityType Name="Journals">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="ownerPhoneNum" Type="varchar" MaxLength="20" />
+          <Property Name="name" Type="varchar" MaxLength="20" />
+          <Property Name="description" Type="varchar" MaxLength="300" />
+          <Property Name="createTime" Type="datetime" Precision="0" />
+          <Property Name="lastEditTime" Type="datetime" Precision="0" />
+          <Property Name="cover" Type="varchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="LostContacts">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="phoneNum" Type="varchar" MaxLength="20" />
+          <Property Name="searchMoment" Type="datetime" Precision="0" />
+          <Property Name="state" Type="varchar" MaxLength="500" />
+        </EntityType>
+        <EntityType Name="Messages">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="sender" Type="varchar" MaxLength="20" />
+          <Property Name="reciever" Type="varchar" MaxLength="20" />
+          <Property Name="messageType" Type="int" />
+          <Property Name="content" Type="varchar" MaxLength="300" />
+          <Property Name="state" Type="int" />
+          <Property Name="time" Type="datetime" Precision="0" />
+        </EntityType>
+        <EntityType Name="Points">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="ownerPhoneNum" Type="varchar" MaxLength="20" />
+          <Property Name="x" Type="int" />
+          <Property Name="y" Type="int" />
+          <Property Name="time" Type="datetime" Precision="0" />
+        </EntityType>
+        <EntityType Name="PushLogs">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="sender" Type="varchar" MaxLength="20" />
+          <Property Name="time" Type="datetime" Precision="0" />
+          <Property Name="sendContent" Type="varchar" MaxLength="200" />
+        </EntityType>
+        <EntityType Name="RegionInfos">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="name" Type="varchar" MaxLength="20" />
+          <Property Name="writing" Type="varchar" MaxLength="100" />
+          <Property Name="sort" Type="int" />
+          <Property Name="x" Type="int" />
+          <Property Name="y" Type="int" />
+          <Property Name="radius" Type="int" />
+        </EntityType>
+        <EntityType Name="RegionStatistics">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="regionId" Type="int" />
+          <Property Name="time" Type="datetime" Precision="0" />
+          <Property Name="regionDensity" Type="int" />
+        </EntityType>
+        <EntityType Name="SceneInfos">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="name" Type="varchar" MaxLength="20" />
+          <Property Name="x" Type="int" />
+          <Property Name="y" Type="int" />
+          <Property Name="introduce" Type="varchar" MaxLength="200" />
+          <Property Name="photo" Type="varchar" MaxLength="100" />
+          <Property Name="star" Type="int" />
+          <Property Name="congestion" Type="int" />
+        </EntityType>
+        <EntityType Name="ServerLogs">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="operator" Type="varchar" MaxLength="20" />
+          <Property Name="time" Type="datetime" Precision="0" />
+          <Property Name="content" Type="varchar" MaxLength="200" />
+        </EntityType>
+        <EntityType Name="Users">
+          <Key>
+            <PropertyRef Name="phoneNum" />
+          </Key>
+          <Property Name="phoneNum" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="id" Type="int" />
+          <Property Name="password" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="name" Type="varchar" MaxLength="20" />
+          <Property Name="nickname" Type="varchar" MaxLength="30" />
+          <Property Name="sex" Type="varchar" MaxLength="5" />
+          <Property Name="avatar" Type="blob" />
+          <Property Name="isInScenic" Type="int" />
+        </EntityType>
+        <Association Name="FK_friendReference">
+          <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
+          <End Role="FriendReferences" Type="Self.FriendReferences" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="phoneNum" />
+            </Principal>
+            <Dependent Role="FriendReferences">
+              <PropertyRef Name="friendPhoneNum" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_receiverReference">
+          <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
+          <End Role="Messages" Type="Self.Messages" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="phoneNum" />
+            </Principal>
+            <Dependent Role="Messages">
+              <PropertyRef Name="reciever" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Reference_1">
+          <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
+          <End Role="Points" Type="Self.Points" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="phoneNum" />
+            </Principal>
+            <Dependent Role="Points">
+              <PropertyRef Name="ownerPhoneNum" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Reference_10">
+          <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
+          <End Role="LostContacts" Type="Self.LostContacts" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="phoneNum" />
+            </Principal>
+            <Dependent Role="LostContacts">
+              <PropertyRef Name="phoneNum" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Reference_11">
+          <End Role="RegionInfos" Type="Self.RegionInfos" Multiplicity="0..1" />
+          <End Role="RegionStatistics" Type="Self.RegionStatistics" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="RegionInfos">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="RegionStatistics">
+              <PropertyRef Name="regionId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Reference_12">
+          <End Role="AdminInfos" Type="Self.AdminInfos" Multiplicity="0..1" />
+          <End Role="ServerLogs" Type="Self.ServerLogs" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AdminInfos">
+              <PropertyRef Name="account" />
+            </Principal>
+            <Dependent Role="ServerLogs">
+              <PropertyRef Name="operator" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Reference_13">
+          <End Role="Journals" Type="Self.Journals" Multiplicity="0..1" />
+          <End Role="Events" Type="Self.Events" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Journals">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Events">
+              <PropertyRef Name="journalId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Reference_14">
+          <End Role="Events" Type="Self.Events" Multiplicity="0..1" />
+          <End Role="Comments" Type="Self.Comments" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Events">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Comments">
+              <PropertyRef Name="eventId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Reference_15">
+          <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
+          <End Role="Comments" Type="Self.Comments" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="phoneNum" />
+            </Principal>
+            <Dependent Role="Comments">
+              <PropertyRef Name="friendPhoneNum" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Reference_2">
+          <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
+          <End Role="Journals" Type="Self.Journals" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="phoneNum" />
+            </Principal>
+            <Dependent Role="Journals">
+              <PropertyRef Name="ownerPhoneNum" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Reference_4">
+          <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
+          <End Role="EmergencyCalls" Type="Self.EmergencyCalls" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="phoneNum" />
+            </Principal>
+            <Dependent Role="EmergencyCalls">
+              <PropertyRef Name="phoneNum" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Reference_5">
+          <End Role="AdminInfos" Type="Self.AdminInfos" Multiplicity="0..1" />
+          <End Role="PushLogs" Type="Self.PushLogs" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AdminInfos">
+              <PropertyRef Name="account" />
+            </Principal>
+            <Dependent Role="PushLogs">
+              <PropertyRef Name="sender" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_senderReference">
+          <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
+          <End Role="Messages" Type="Self.Messages" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="phoneNum" />
+            </Principal>
+            <Dependent Role="Messages">
+              <PropertyRef Name="sender" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_userReference">
+          <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
+          <End Role="FriendReferences" Type="Self.FriendReferences" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="phoneNum" />
+            </Principal>
+            <Dependent Role="FriendReferences">
+              <PropertyRef Name="userPhoneNum" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="TravelMobileModelStoreContainer">
+          <EntitySet Name="AdminInfos" EntityType="Self.AdminInfos" Schema="ServerDatabase" store:Type="Tables" />
+          <EntitySet Name="Comments" EntityType="Self.Comments" Schema="ServerDatabase" store:Type="Tables" />
+          <EntitySet Name="EmergencyCalls" EntityType="Self.EmergencyCalls" Schema="ServerDatabase" store:Type="Tables" />
+          <EntitySet Name="Events" EntityType="Self.Events" Schema="ServerDatabase" store:Type="Tables" />
+          <EntitySet Name="FriendReferences" EntityType="Self.FriendReferences" Schema="ServerDatabase" store:Type="Tables" />
+          <EntitySet Name="Journals" EntityType="Self.Journals" Schema="ServerDatabase" store:Type="Tables" />
+          <EntitySet Name="LostContacts" EntityType="Self.LostContacts" Schema="ServerDatabase" store:Type="Tables" />
+          <EntitySet Name="Messages" EntityType="Self.Messages" Schema="ServerDatabase" store:Type="Tables" />
+          <EntitySet Name="Points" EntityType="Self.Points" Schema="ServerDatabase" store:Type="Tables" />
+          <EntitySet Name="PushLogs" EntityType="Self.PushLogs" Schema="ServerDatabase" store:Type="Tables" />
+          <EntitySet Name="RegionInfos" EntityType="Self.RegionInfos" Schema="ServerDatabase" store:Type="Tables" />
+          <EntitySet Name="RegionStatistics" EntityType="Self.RegionStatistics" Schema="ServerDatabase" store:Type="Tables" />
+          <EntitySet Name="SceneInfos" EntityType="Self.SceneInfos" Schema="ServerDatabase" store:Type="Tables" />
+          <EntitySet Name="ServerLogs" EntityType="Self.ServerLogs" Schema="ServerDatabase" store:Type="Tables" />
+          <EntitySet Name="Users" EntityType="Self.Users" Schema="ServerDatabase" store:Type="Tables" />
+          <AssociationSet Name="FK_friendReference" Association="Self.FK_friendReference">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="FriendReferences" EntitySet="FriendReferences" />
+          </AssociationSet>
+          <AssociationSet Name="FK_receiverReference" Association="Self.FK_receiverReference">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Messages" EntitySet="Messages" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Reference_1" Association="Self.FK_Reference_1">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Points" EntitySet="Points" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Reference_10" Association="Self.FK_Reference_10">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="LostContacts" EntitySet="LostContacts" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Reference_11" Association="Self.FK_Reference_11">
+            <End Role="RegionInfos" EntitySet="RegionInfos" />
+            <End Role="RegionStatistics" EntitySet="RegionStatistics" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Reference_12" Association="Self.FK_Reference_12">
+            <End Role="AdminInfos" EntitySet="AdminInfos" />
+            <End Role="ServerLogs" EntitySet="ServerLogs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Reference_13" Association="Self.FK_Reference_13">
+            <End Role="Journals" EntitySet="Journals" />
+            <End Role="Events" EntitySet="Events" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Reference_14" Association="Self.FK_Reference_14">
+            <End Role="Events" EntitySet="Events" />
+            <End Role="Comments" EntitySet="Comments" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Reference_15" Association="Self.FK_Reference_15">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Comments" EntitySet="Comments" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Reference_2" Association="Self.FK_Reference_2">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Journals" EntitySet="Journals" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Reference_4" Association="Self.FK_Reference_4">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="EmergencyCalls" EntitySet="EmergencyCalls" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Reference_5" Association="Self.FK_Reference_5">
+            <End Role="AdminInfos" EntitySet="AdminInfos" />
+            <End Role="PushLogs" EntitySet="PushLogs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_senderReference" Association="Self.FK_senderReference">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Messages" EntitySet="Messages" />
+          </AssociationSet>
+          <AssociationSet Name="FK_userReference" Association="Self.FK_userReference">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="FriendReferences" EntitySet="FriendReferences" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="TravelMobileModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="AdminInfo">
+          <Key>
+            <PropertyRef Name="account" />
+          </Key>
+          <Property Name="account" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="name" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="password" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="ServerLogs" Relationship="Self.FK_Reference_12" FromRole="AdminInfos" ToRole="ServerLogs" />
+          <NavigationProperty Name="PushLogs" Relationship="Self.FK_Reference_5" FromRole="AdminInfos" ToRole="PushLogs" />
+        </EntityType>
+        <EntityType Name="Comment">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" />
+          <Property Name="eventId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="friendPhoneNum" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="content" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Event" Relationship="Self.FK_Reference_14" FromRole="Comments" ToRole="Events" />
+          <NavigationProperty Name="User" Relationship="Self.FK_Reference_15" FromRole="Comments" ToRole="Users" />
+        </EntityType>
+        <EntityType Name="EmergencyCall">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" />
+          <Property Name="phoneNum" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="time" Type="DateTime" />
+          <Property Name="x" Type="Int32" />
+          <Property Name="y" Type="Int32" />
+          <NavigationProperty Name="User" Relationship="Self.FK_Reference_4" FromRole="EmergencyCalls" ToRole="Users" />
+        </EntityType>
+        <EntityType Name="Event">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="journalId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="x" Type="Int32" />
+          <Property Name="y" Type="Int32" />
+          <Property Name="text" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+          <Property Name="photo" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="time" Type="DateTime" />
+          <NavigationProperty Name="Comments" Relationship="Self.FK_Reference_14" FromRole="Events" ToRole="Comments" />
+          <NavigationProperty Name="Journal" Relationship="Self.FK_Reference_13" FromRole="Events" ToRole="Journals" />
+        </EntityType>
+        <EntityType Name="FriendReference">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" />
+          <Property Name="userPhoneNum" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="friendPhoneNum" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="privilege" Type="Int32" />
+          <NavigationProperty Name="User" Relationship="Self.FK_friendReference" FromRole="FriendReferences" ToRole="Users" />
+          <NavigationProperty Name="User1" Relationship="Self.FK_userReference" FromRole="FriendReferences" ToRole="Users" />
+        </EntityType>
+        <EntityType Name="Journal">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ownerPhoneNum" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="name" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="description" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+          <Property Name="createTime" Type="DateTime" />
+          <Property Name="lastEditTime" Type="DateTime" />
+          <Property Name="cover" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Events" Relationship="Self.FK_Reference_13" FromRole="Journals" ToRole="Events" />
+          <NavigationProperty Name="User" Relationship="Self.FK_Reference_2" FromRole="Journals" ToRole="Users" />
+        </EntityType>
+        <EntityType Name="LostContact">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" />
+          <Property Name="phoneNum" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="searchMoment" Type="DateTime" />
+          <Property Name="state" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="User" Relationship="Self.FK_Reference_10" FromRole="LostContacts" ToRole="Users" />
+        </EntityType>
+        <EntityType Name="Message">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" />
+          <Property Name="sender" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="reciever" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="messageType" Type="Int32" />
+          <Property Name="content" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+          <Property Name="state" Type="Int32" />
+          <Property Name="time" Type="DateTime" />
+          <NavigationProperty Name="User" Relationship="Self.FK_receiverReference" FromRole="Messages" ToRole="Users" />
+          <NavigationProperty Name="User1" Relationship="Self.FK_senderReference" FromRole="Messages" ToRole="Users" />
+        </EntityType>
+        <EntityType Name="Point">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" />
+          <Property Name="ownerPhoneNum" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="x" Type="Int32" />
+          <Property Name="y" Type="Int32" />
+          <Property Name="time" Type="DateTime" />
+          <NavigationProperty Name="User" Relationship="Self.FK_Reference_1" FromRole="Points" ToRole="Users" />
+        </EntityType>
+        <EntityType Name="PushLog">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" />
+          <Property Name="sender" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="time" Type="DateTime" />
+          <Property Name="sendContent" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="AdminInfo" Relationship="Self.FK_Reference_5" FromRole="PushLogs" ToRole="AdminInfos" />
+        </EntityType>
+        <EntityType Name="RegionInfo">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" />
+          <Property Name="name" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="writing" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="sort" Type="Int32" />
+          <Property Name="x" Type="Int32" />
+          <Property Name="y" Type="Int32" />
+          <Property Name="radius" Type="Int32" />
+          <NavigationProperty Name="RegionStatistics" Relationship="Self.FK_Reference_11" FromRole="RegionInfos" ToRole="RegionStatistics" />
+        </EntityType>
+        <EntityType Name="RegionStatistic">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" />
+          <Property Name="regionId" Type="Int32" />
+          <Property Name="time" Type="DateTime" />
+          <Property Name="regionDensity" Type="Int32" />
+          <NavigationProperty Name="RegionInfo" Relationship="Self.FK_Reference_11" FromRole="RegionStatistics" ToRole="RegionInfos" />
+        </EntityType>
+        <EntityType Name="SceneInfo">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" />
+          <Property Name="name" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="x" Type="Int32" />
+          <Property Name="y" Type="Int32" />
+          <Property Name="introduce" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="photo" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="star" Type="Int32" />
+          <Property Name="congestion" Type="Int32" />
+        </EntityType>
+        <EntityType Name="ServerLog">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" />
+          <Property Name="operator" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="time" Type="DateTime" />
+          <Property Name="content" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="AdminInfo" Relationship="Self.FK_Reference_12" FromRole="ServerLogs" ToRole="AdminInfos" />
+        </EntityType>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="phoneNum" />
+          </Key>
+          <Property Name="phoneNum" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="id" Type="Int32" />
+          <Property Name="password" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="name" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="nickname" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="sex" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="avatar" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="isInScenic" Type="Int32" />
+          <NavigationProperty Name="Comments" Relationship="Self.FK_Reference_15" FromRole="Users" ToRole="Comments" />
+          <NavigationProperty Name="EmergencyCalls" Relationship="Self.FK_Reference_4" FromRole="Users" ToRole="EmergencyCalls" />
+          <NavigationProperty Name="FriendReferences" Relationship="Self.FK_friendReference" FromRole="Users" ToRole="FriendReferences" />
+          <NavigationProperty Name="FriendReferences1" Relationship="Self.FK_userReference" FromRole="Users" ToRole="FriendReferences" />
+          <NavigationProperty Name="Journals" Relationship="Self.FK_Reference_2" FromRole="Users" ToRole="Journals" />
+          <NavigationProperty Name="LostContacts" Relationship="Self.FK_Reference_10" FromRole="Users" ToRole="LostContacts" />
+          <NavigationProperty Name="Messages" Relationship="Self.FK_receiverReference" FromRole="Users" ToRole="Messages" />
+          <NavigationProperty Name="Messages1" Relationship="Self.FK_senderReference" FromRole="Users" ToRole="Messages" />
+          <NavigationProperty Name="Points" Relationship="Self.FK_Reference_1" FromRole="Users" ToRole="Points" />
+        </EntityType>
+        <Association Name="FK_Reference_12">
+          <End Role="AdminInfos" Type="Self.AdminInfo" Multiplicity="0..1" />
+          <End Role="ServerLogs" Type="Self.ServerLog" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AdminInfos">
+              <PropertyRef Name="account" />
+            </Principal>
+            <Dependent Role="ServerLogs">
+              <PropertyRef Name="operator" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Reference_5">
+          <End Role="AdminInfos" Type="Self.AdminInfo" Multiplicity="0..1" />
+          <End Role="PushLogs" Type="Self.PushLog" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AdminInfos">
+              <PropertyRef Name="account" />
+            </Principal>
+            <Dependent Role="PushLogs">
+              <PropertyRef Name="sender" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Reference_14">
+          <End Role="Events" Type="Self.Event" Multiplicity="0..1" />
+          <End Role="Comments" Type="Self.Comment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Events">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Comments">
+              <PropertyRef Name="eventId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Reference_15">
+          <End Role="Users" Type="Self.User" Multiplicity="0..1" />
+          <End Role="Comments" Type="Self.Comment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="phoneNum" />
+            </Principal>
+            <Dependent Role="Comments">
+              <PropertyRef Name="friendPhoneNum" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Reference_4">
+          <End Role="Users" Type="Self.User" Multiplicity="0..1" />
+          <End Role="EmergencyCalls" Type="Self.EmergencyCall" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="phoneNum" />
+            </Principal>
+            <Dependent Role="EmergencyCalls">
+              <PropertyRef Name="phoneNum" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Reference_13">
+          <End Role="Journals" Type="Self.Journal" Multiplicity="0..1" />
+          <End Role="Events" Type="Self.Event" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Journals">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Events">
+              <PropertyRef Name="journalId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_friendReference">
+          <End Role="Users" Type="Self.User" Multiplicity="0..1" />
+          <End Role="FriendReferences" Type="Self.FriendReference" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="phoneNum" />
+            </Principal>
+            <Dependent Role="FriendReferences">
+              <PropertyRef Name="friendPhoneNum" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_userReference">
+          <End Role="Users" Type="Self.User" Multiplicity="0..1" />
+          <End Role="FriendReferences" Type="Self.FriendReference" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="phoneNum" />
+            </Principal>
+            <Dependent Role="FriendReferences">
+              <PropertyRef Name="userPhoneNum" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Reference_2">
+          <End Role="Users" Type="Self.User" Multiplicity="0..1" />
+          <End Role="Journals" Type="Self.Journal" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="phoneNum" />
+            </Principal>
+            <Dependent Role="Journals">
+              <PropertyRef Name="ownerPhoneNum" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Reference_10">
+          <End Role="Users" Type="Self.User" Multiplicity="0..1" />
+          <End Role="LostContacts" Type="Self.LostContact" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="phoneNum" />
+            </Principal>
+            <Dependent Role="LostContacts">
+              <PropertyRef Name="phoneNum" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_receiverReference">
+          <End Role="Users" Type="Self.User" Multiplicity="0..1" />
+          <End Role="Messages" Type="Self.Message" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="phoneNum" />
+            </Principal>
+            <Dependent Role="Messages">
+              <PropertyRef Name="reciever" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_senderReference">
+          <End Role="Users" Type="Self.User" Multiplicity="0..1" />
+          <End Role="Messages" Type="Self.Message" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="phoneNum" />
+            </Principal>
+            <Dependent Role="Messages">
+              <PropertyRef Name="sender" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Reference_1">
+          <End Role="Users" Type="Self.User" Multiplicity="0..1" />
+          <End Role="Points" Type="Self.Point" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="phoneNum" />
+            </Principal>
+            <Dependent Role="Points">
+              <PropertyRef Name="ownerPhoneNum" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Reference_11">
+          <End Role="RegionInfos" Type="Self.RegionInfo" Multiplicity="0..1" />
+          <End Role="RegionStatistics" Type="Self.RegionStatistic" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="RegionInfos">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="RegionStatistics">
+              <PropertyRef Name="regionId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="TravelMobileEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="AdminInfos" EntityType="Self.AdminInfo" />
+          <EntitySet Name="Comments" EntityType="Self.Comment" />
+          <EntitySet Name="EmergencyCalls" EntityType="Self.EmergencyCall" />
+          <EntitySet Name="Events" EntityType="Self.Event" />
+          <EntitySet Name="FriendReferences" EntityType="Self.FriendReference" />
+          <EntitySet Name="Journals" EntityType="Self.Journal" />
+          <EntitySet Name="LostContacts" EntityType="Self.LostContact" />
+          <EntitySet Name="Messages" EntityType="Self.Message" />
+          <EntitySet Name="Points" EntityType="Self.Point" />
+          <EntitySet Name="PushLogs" EntityType="Self.PushLog" />
+          <EntitySet Name="RegionInfos" EntityType="Self.RegionInfo" />
+          <EntitySet Name="RegionStatistics" EntityType="Self.RegionStatistic" />
+          <EntitySet Name="SceneInfos" EntityType="Self.SceneInfo" />
+          <EntitySet Name="ServerLogs" EntityType="Self.ServerLog" />
+          <EntitySet Name="Users" EntityType="Self.User" />
+          <AssociationSet Name="FK_Reference_12" Association="Self.FK_Reference_12">
+            <End Role="AdminInfos" EntitySet="AdminInfos" />
+            <End Role="ServerLogs" EntitySet="ServerLogs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Reference_5" Association="Self.FK_Reference_5">
+            <End Role="AdminInfos" EntitySet="AdminInfos" />
+            <End Role="PushLogs" EntitySet="PushLogs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Reference_14" Association="Self.FK_Reference_14">
+            <End Role="Events" EntitySet="Events" />
+            <End Role="Comments" EntitySet="Comments" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Reference_15" Association="Self.FK_Reference_15">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Comments" EntitySet="Comments" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Reference_4" Association="Self.FK_Reference_4">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="EmergencyCalls" EntitySet="EmergencyCalls" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Reference_13" Association="Self.FK_Reference_13">
+            <End Role="Journals" EntitySet="Journals" />
+            <End Role="Events" EntitySet="Events" />
+          </AssociationSet>
+          <AssociationSet Name="FK_friendReference" Association="Self.FK_friendReference">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="FriendReferences" EntitySet="FriendReferences" />
+          </AssociationSet>
+          <AssociationSet Name="FK_userReference" Association="Self.FK_userReference">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="FriendReferences" EntitySet="FriendReferences" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Reference_2" Association="Self.FK_Reference_2">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Journals" EntitySet="Journals" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Reference_10" Association="Self.FK_Reference_10">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="LostContacts" EntitySet="LostContacts" />
+          </AssociationSet>
+          <AssociationSet Name="FK_receiverReference" Association="Self.FK_receiverReference">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Messages" EntitySet="Messages" />
+          </AssociationSet>
+          <AssociationSet Name="FK_senderReference" Association="Self.FK_senderReference">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Messages" EntitySet="Messages" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Reference_1" Association="Self.FK_Reference_1">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Points" EntitySet="Points" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Reference_11" Association="Self.FK_Reference_11">
+            <End Role="RegionInfos" EntitySet="RegionInfos" />
+            <End Role="RegionStatistics" EntitySet="RegionStatistics" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="TravelMobileModelStoreContainer" CdmEntityContainer="TravelMobileEntities">
+          <EntitySetMapping Name="AdminInfos">
+            <EntityTypeMapping TypeName="TravelMobileModel.AdminInfo">
+              <MappingFragment StoreEntitySet="AdminInfos">
+                <ScalarProperty Name="account" ColumnName="account" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="password" ColumnName="password" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Comments">
+            <EntityTypeMapping TypeName="TravelMobileModel.Comment">
+              <MappingFragment StoreEntitySet="Comments">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="eventId" ColumnName="eventId" />
+                <ScalarProperty Name="friendPhoneNum" ColumnName="friendPhoneNum" />
+                <ScalarProperty Name="content" ColumnName="content" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="EmergencyCalls">
+            <EntityTypeMapping TypeName="TravelMobileModel.EmergencyCall">
+              <MappingFragment StoreEntitySet="EmergencyCalls">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="phoneNum" ColumnName="phoneNum" />
+                <ScalarProperty Name="time" ColumnName="time" />
+                <ScalarProperty Name="x" ColumnName="x" />
+                <ScalarProperty Name="y" ColumnName="y" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Events">
+            <EntityTypeMapping TypeName="TravelMobileModel.Event">
+              <MappingFragment StoreEntitySet="Events">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="journalId" ColumnName="journalId" />
+                <ScalarProperty Name="x" ColumnName="x" />
+                <ScalarProperty Name="y" ColumnName="y" />
+                <ScalarProperty Name="text" ColumnName="text" />
+                <ScalarProperty Name="photo" ColumnName="photo" />
+                <ScalarProperty Name="time" ColumnName="time" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="FriendReferences">
+            <EntityTypeMapping TypeName="TravelMobileModel.FriendReference">
+              <MappingFragment StoreEntitySet="FriendReferences">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="userPhoneNum" ColumnName="userPhoneNum" />
+                <ScalarProperty Name="friendPhoneNum" ColumnName="friendPhoneNum" />
+                <ScalarProperty Name="privilege" ColumnName="privilege" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Journals">
+            <EntityTypeMapping TypeName="TravelMobileModel.Journal">
+              <MappingFragment StoreEntitySet="Journals">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="ownerPhoneNum" ColumnName="ownerPhoneNum" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="description" ColumnName="description" />
+                <ScalarProperty Name="createTime" ColumnName="createTime" />
+                <ScalarProperty Name="lastEditTime" ColumnName="lastEditTime" />
+                <ScalarProperty Name="cover" ColumnName="cover" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LostContacts">
+            <EntityTypeMapping TypeName="TravelMobileModel.LostContact">
+              <MappingFragment StoreEntitySet="LostContacts">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="phoneNum" ColumnName="phoneNum" />
+                <ScalarProperty Name="searchMoment" ColumnName="searchMoment" />
+                <ScalarProperty Name="state" ColumnName="state" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Messages">
+            <EntityTypeMapping TypeName="TravelMobileModel.Message">
+              <MappingFragment StoreEntitySet="Messages">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="sender" ColumnName="sender" />
+                <ScalarProperty Name="reciever" ColumnName="reciever" />
+                <ScalarProperty Name="messageType" ColumnName="messageType" />
+                <ScalarProperty Name="content" ColumnName="content" />
+                <ScalarProperty Name="state" ColumnName="state" />
+                <ScalarProperty Name="time" ColumnName="time" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Points">
+            <EntityTypeMapping TypeName="TravelMobileModel.Point">
+              <MappingFragment StoreEntitySet="Points">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="ownerPhoneNum" ColumnName="ownerPhoneNum" />
+                <ScalarProperty Name="x" ColumnName="x" />
+                <ScalarProperty Name="y" ColumnName="y" />
+                <ScalarProperty Name="time" ColumnName="time" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PushLogs">
+            <EntityTypeMapping TypeName="TravelMobileModel.PushLog">
+              <MappingFragment StoreEntitySet="PushLogs">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="sender" ColumnName="sender" />
+                <ScalarProperty Name="time" ColumnName="time" />
+                <ScalarProperty Name="sendContent" ColumnName="sendContent" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="RegionInfos">
+            <EntityTypeMapping TypeName="TravelMobileModel.RegionInfo">
+              <MappingFragment StoreEntitySet="RegionInfos">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="writing" ColumnName="writing" />
+                <ScalarProperty Name="sort" ColumnName="sort" />
+                <ScalarProperty Name="x" ColumnName="x" />
+                <ScalarProperty Name="y" ColumnName="y" />
+                <ScalarProperty Name="radius" ColumnName="radius" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="RegionStatistics">
+            <EntityTypeMapping TypeName="TravelMobileModel.RegionStatistic">
+              <MappingFragment StoreEntitySet="RegionStatistics">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="regionId" ColumnName="regionId" />
+                <ScalarProperty Name="time" ColumnName="time" />
+                <ScalarProperty Name="regionDensity" ColumnName="regionDensity" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SceneInfos">
+            <EntityTypeMapping TypeName="TravelMobileModel.SceneInfo">
+              <MappingFragment StoreEntitySet="SceneInfos">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="x" ColumnName="x" />
+                <ScalarProperty Name="y" ColumnName="y" />
+                <ScalarProperty Name="introduce" ColumnName="introduce" />
+                <ScalarProperty Name="photo" ColumnName="photo" />
+                <ScalarProperty Name="star" ColumnName="star" />
+                <ScalarProperty Name="congestion" ColumnName="congestion" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ServerLogs">
+            <EntityTypeMapping TypeName="TravelMobileModel.ServerLog">
+              <MappingFragment StoreEntitySet="ServerLogs">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="operator" ColumnName="operator" />
+                <ScalarProperty Name="time" ColumnName="time" />
+                <ScalarProperty Name="content" ColumnName="content" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Users">
+            <EntityTypeMapping TypeName="TravelMobileModel.User">
+              <MappingFragment StoreEntitySet="Users">
+                <ScalarProperty Name="phoneNum" ColumnName="phoneNum" />
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="password" ColumnName="password" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="nickname" ColumnName="nickname" />
+                <ScalarProperty Name="sex" ColumnName="sex" />
+                <ScalarProperty Name="avatar" ColumnName="avatar" />
+                <ScalarProperty Name="isInScenic" ColumnName="isInScenic" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="true" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="无" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

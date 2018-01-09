@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="77b832607c0a4454a90001daf6b19d37" Name="Diagram1">
+        <EntityTypeShape EntityType="TravelMobileModel.AdminInfo" Width="1.5" PointX="5.75" PointY="2.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="TravelMobileModel.Comment" Width="1.5" PointX="7.5" PointY="11.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="TravelMobileModel.EmergencyCall" Width="1.5" PointX="3" PointY="6.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="TravelMobileModel.Event" Width="1.5" PointX="5.25" PointY="11.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="TravelMobileModel.FriendReference" Width="1.5" PointX="3" PointY="9" IsExpanded="true" />
+        <EntityTypeShape EntityType="TravelMobileModel.Journal" Width="1.5" PointX="3" PointY="11.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="TravelMobileModel.LostContact" Width="1.5" PointX="3" PointY="15.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="TravelMobileModel.Message" Width="1.5" PointX="3" PointY="17.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="TravelMobileModel.Point" Width="1.5" PointX="3" PointY="21.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="TravelMobileModel.PushLog" Width="1.5" PointX="8" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="TravelMobileModel.RegionInfo" Width="1.5" PointX="5.75" PointY="7" IsExpanded="true" />
+        <EntityTypeShape EntityType="TravelMobileModel.RegionStatistic" Width="1.5" PointX="8" PointY="7.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="TravelMobileModel.SceneInfo" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="TravelMobileModel.ServerLog" Width="1.5" PointX="8" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="TravelMobileModel.User" Width="1.5" PointX="0.75" PointY="9.875" IsExpanded="true" />
+        <AssociationConnector Association="TravelMobileModel.FK_Reference_12" ManuallyRouted="false" />
+        <AssociationConnector Association="TravelMobileModel.FK_Reference_5" ManuallyRouted="false" />
+        <AssociationConnector Association="TravelMobileModel.FK_Reference_14" ManuallyRouted="false" />
+        <AssociationConnector Association="TravelMobileModel.FK_Reference_15" ManuallyRouted="false" />
+        <AssociationConnector Association="TravelMobileModel.FK_Reference_4" ManuallyRouted="false" />
+        <AssociationConnector Association="TravelMobileModel.FK_Reference_13" ManuallyRouted="false" />
+        <AssociationConnector Association="TravelMobileModel.FK_friendReference" ManuallyRouted="false" />
+        <AssociationConnector Association="TravelMobileModel.FK_userReference" ManuallyRouted="false" />
+        <AssociationConnector Association="TravelMobileModel.FK_Reference_2" ManuallyRouted="false" />
+        <AssociationConnector Association="TravelMobileModel.FK_Reference_10" ManuallyRouted="false" />
+        <AssociationConnector Association="TravelMobileModel.FK_receiverReference" ManuallyRouted="false" />
+        <AssociationConnector Association="TravelMobileModel.FK_senderReference" ManuallyRouted="false" />
+        <AssociationConnector Association="TravelMobileModel.FK_Reference_1" ManuallyRouted="false" />
+        <AssociationConnector Association="TravelMobileModel.FK_Reference_11" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
